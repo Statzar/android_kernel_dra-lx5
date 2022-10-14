@@ -1,0 +1,9 @@
+####dura64_board_default_defconfig####
+CONFIG_MTK_MD1_SUPPORT=14
+#CONFIG_MTK_C2K_LTE_MODE=2
+CONFIG_MTK_MD_SBP_CUSTOM_VALUE="0"
+####dura64_board_default_defconfig####
+
+CONFIG_CUSTOM_KERNEL_SAR=y
+CONFIG_MTK_SX9320=y
+

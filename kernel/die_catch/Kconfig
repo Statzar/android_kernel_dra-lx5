@@ -1,0 +1,9 @@
+#
+# add HW_DIE_CATCH config
+#
+
+config HW_DIE_CATCH
+	bool "unexpected die catch feature"
+	default y
+	help
+	  catch a process kill/exit and will transform it SIGABORT

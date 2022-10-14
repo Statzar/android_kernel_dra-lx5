@@ -1,0 +1,62 @@
+make[1]: Entering directory `/home/wwx454085/workspace/kernel-4.4/out'
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  Using .. as source for kernel
+  CHK     include/generated/utsrelease.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    ../scripts/checksyscalls.sh
+make[2]: `include/generated/vdso-offsets.h' is up to date.
+  CHK     include/generated/compile.h
+Singing the generated overlay dtbo.
+cat ./arch/arm64/boot/dts/mediatek/dura64.dtb > ./arch/arm64/boot/dts/dura64.mdtb || (rm -f ./arch/arm64/boot/dts/dura64.mdtb; false)
+python ../scripts/multiple_dtbo.py ./arch/arm64/boot/dts/dura64.mdtb ./arch/arm64/boot/dts/dura64.mimg
+[0].
+../scripts/mkimage ./arch/arm64/boot/dts/dura64.mimg ../scripts/odmdtbo.cfg  > arch/arm64/boot/dts/odmdtbo.img
+find lcdkit mtk folder, include it now! 
+  CHK     kernel/config_data.h
+  UPD     kernel/config_data.h
+  CC      kernel/huawei_hung_task.o
+  CC      kernel/utsname_sysctl.o
+  CC      kernel/taskstats.o
+  CC      kernel/tsacct.o
+  CC      kernel/tracepoint.o
+  CC      kernel/elfcore.o
+  CC      kernel/irq_work.o
+  CC      kernel/cpu_pm.o
+  CC      kernel/membarrier.o
+  CC      kernel/memremap.o
+  CC      kernel/configs.o
+..
+..
+..
+..
+  LD      kernel/built-in.o
+DEVAPC platform code exists...
+..
+cameraisp drv by platform 
+imgsensor drv by common ../common/v1/hi1333_mipi_raw/ ../common/v1/s5k3l6_mipi_raw/ ../common/v1/ov13855_mipi_raw/ ../common/v1/hi846_mipi_raw/ ../common/v1/ov8856_mipi_raw/ ../common/v1/gc8034_mipi_raw/ ../common/v1/gc8034a_mipi_raw/ ../common/v1/hi556_mipi_raw/ ../common/v1/gc5025a_mipi_raw/ ../common/v1/gc5025h_mipi_raw/ ../common/v1/ov5675_mipi_raw/
+*MTK_GPU_VERSION = rgx auckland 1.8ED
+"CONFIG_MICROTRUST_TEE_VERSION="251""
+"CONFIG_MICROTRUST_TEE_SUPPORT=y"
+  LINK    vmlinux
+  LD      vmlinux.o
+  MODPOST vmlinux.o
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  LD      init/built-in.o
+  KSYM    .tmp_kallsyms1.o
+  KSYM    .tmp_kallsyms2.o
+  LD      vmlinux
+  SORTEX  vmlinux
+  SYSMAP  System.map
+  OBJCOPY arch/arm64/boot/Image
+  Building modules, stage 2.
+  MODPOST 0 modules
+  GZIP    arch/arm64/boot/Image.gz
+  CAT     arch/arm64/boot/Image.gz-dtb
+make[1]: Leaving directory `/home/wwx454085/workspace/kernel-4.4/out'
